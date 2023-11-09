@@ -2,7 +2,7 @@ interface Computer {
     double calculate(double a, double b);
 }
 
-class ComputerImpl implements Computer {        // ComputerImpl类实现Computer接口，实现加法
+class ComputerImpl implements Computer {
     @Override
     public double calculate(double a, double b) {
         return a + b;
@@ -10,7 +10,7 @@ class ComputerImpl implements Computer {        // ComputerImpl类实现Computer
 }
 
 
-class ComputerImpl2 implements Computer {        // ComputerImpl2类实现Computer接口，实现减法
+class ComputerImpl2 implements Computer {      
     @Override
     public double calculate(double a, double b) {
         return a - b;
@@ -18,7 +18,7 @@ class ComputerImpl2 implements Computer {        // ComputerImpl2类实现Comput
 }
 
 
-class ComputerImpl3 implements Computer {        // ComputerImpl3类实现Computer接口，实现乘法
+class ComputerImpl3 implements Computer {
     @Override
     public double calculate(double a, double b) {
         return a * b;
@@ -26,7 +26,7 @@ class ComputerImpl3 implements Computer {        // ComputerImpl3类实现Comput
 }
 
 
-class ComputerImpl4 implements Computer {        // ComputerImpl4类实现Computer接口，实现除法
+class ComputerImpl4 implements Computer {
     @Override
     public double calculate(double a, double b) {
         if (b == 0) {
