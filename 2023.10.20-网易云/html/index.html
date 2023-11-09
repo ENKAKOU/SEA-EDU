@@ -1,0 +1,2579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>网易云音乐</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-width: 1000px;
+            background-color: #f5f5f5;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .page-header {
+            height: 105px;
+            width: 100%;
+        }
+
+
+        em,i {
+            font-style: normal;
+        }
+
+        /*一级导航栏框架*/
+        .top {
+            width: 100%;
+            height:70px;
+            background-color: rgb(36, 36, 36);
+            color: #cccccc;
+        }
+
+        .top a {
+            color: #cccccc;
+            list-style: none;
+            line-height: 69px;
+        }
+
+        /*二级导航栏框架*/
+        .wrap {
+            width: 100%;
+            height: 35px;
+            background-color: #C20C0C;
+        }
+
+        /*一级导航栏内容*/
+        .top .bread {
+            width: 1200px;
+            height: 100%;
+            margin: auto;
+        }
+
+        .top .nav {
+            float: left;
+            width: 800px;
+            height: 69px;
+            margin-left: 40px;
+        }
+
+        .nav li, .nav li span, .nav a, .nav a em{
+            float: left;
+            height: 69px;
+            font-size: 14px;
+            text-align:center;
+            line-height: 69px;
+            color: #fff;
+            cursor: pointer;
+        }
+        .nav li span{
+            padding-left: 18px;
+            padding-right: 18px;
+        }
+        .nav .first {
+            width: 94px;
+            background: black;
+        }
+        .nav .first .cov{
+            display: block;
+            position: absolute;
+            top: 64px;
+            width: 12px;
+            height: 7px;
+            margin-left: 20px;
+            background-position: -226px 0;
+        }
+
+        .nav .last{
+            position: relative;
+            width: 108px;
+        }
+
+        .top .logo {
+            float: left;
+            width: 176px;
+            height: 69px;
+        }
+
+
+        .nav li:hover {
+            background: black;
+            color: white;
+        }
+
+
+        /*****************************/
+        /*二级导航栏*/
+
+        .wrap .w_body {
+            width: 1100px;
+            height: 35px;
+            margin: 0 auto;
+        }
+        .w_body .bread {
+            width: 100%;
+            height: 100%;
+            margin: auto;
+        }
+
+        .bread .navitems {
+            float: left;
+            width: 800px;
+            height: 0;
+            margin-left: 140px;
+        }
+
+        .bread .navitems li, .bread .navitems li span,.bread .navitems a,.bread .navitems a em{
+            float: left;
+            height: 35px;
+            font-size: 14px;
+            text-align:center;
+            line-height: 35px;
+            color: #fff;
+            cursor: pointer;
+        }
+        .navitems li span{
+            padding-left: 18px;
+            padding-right: 18px;
+        }
+        .navitems .first {
+            width: 94px;
+        }
+        .navitems .first .cov{
+            display: block;
+            position: absolute;
+            top: 64px;
+            width: 12px;
+            height: 7px;
+            margin-left: 20px;
+            background-position: -226px 0;
+        }
+
+        .navitems .last{
+            position: relative;
+            width: 108px;
+        }
+
+
+        .main {
+            width: 1000px;
+            height: 1300px;
+            margin: auto auto 15px;
+        }
+
+        .main:before,.main:after {
+            content: '';
+            display: block;
+            height: 0;
+            line-height: 0;
+            clear: both;
+        }
+
+        /* 左侧内容 */
+        .main-l{
+            width:730px;
+            height: 1310px;
+            border-collapse: collapse;
+            float: left;
+            border-left: 1px solid #ccc;
+        }
+
+        /* 第一部分 */
+
+        /* 推荐导航栏 */
+        .main-l .m-l-top {
+            width: 730px;
+            height: 523px;
+            padding-top: 23px;
+        }
+
+        .main-l .m-l-top .top-nav {
+            width: 100%;
+            height: 35px;
+            display: inline-block;
+            padding-left: 10px;
+            border-bottom: 2px solid #8a060b;
+        }
+
+        .top-nav-logo {
+            float: left;
+            width: 35px;
+            height: 30px;
+            background: no-repeat -225px -158px;
+        }
+
+        .top-nav .title {
+            display: inline-block;
+            float: left;
+            font-size: 20px;
+        }
+
+        .top-nav-m {
+            display: inline-block;
+            width: 440px;
+            height: 20px;
+            margin-top: 5px;
+            color: black;
+        }
+
+        .top-nav-m a {
+            color: black;
+        }
+
+        .top-nav-m span {
+            display: inline;
+            width: 3px;
+            margin: 0 5px;
+        }
+
+        .top-nav-m span {
+
+        }
+
+        /* 推荐内容 */
+        .m-cvrlst {
+            display: block;
+            width: 731px;
+            height: 468px;
+            margin: 20px 0 0 15px;
+        }
+
+        .m-cvrlst li {
+            display: inline-block;
+            width: 178px;
+            height: 234px;
+        }
+
+        .m-cvrlst li .u-cover {
+            width: 140px;
+            height: 140px;
+            position: relative;
+            display: block;
+            cursor: pointer;
+        }
+
+        .m-cvrlst li .u-cover .bottom {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 27px;
+            color: #ccc;
+            background: no-repeat 0 -537px;
+        }
+
+        .u-cover .icon-play {
+            display: inline-block;
+            position: absolute;
+            right: 10px;
+            bottom: 5px;
+            width: 16px;
+            height: 17px;
+
+        }
+
+        .u-cover .icon-headset {
+            display: inline-block;
+            float: left;
+            width: 14px;
+            height: 11px;
+            margin: 9px 5px 9px 10px;
+            background: no-repeat 0 -24px;
+        }
+
+        .m-cvrlst li p {
+            width: 100%;
+        }
+
+        .m-cvrlst li .dec {
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        /* 新碟上架 */
+        .main-l-middle {
+            width: 730px;
+            height: 243px;
+            margin: 0 0;
+        }
+
+        .main-l-middle .nav-m {
+            width: 100%;
+            height: 35px;
+            display: inline-block;
+            padding-left: 10px;
+            border-bottom: 2px solid #8a060b;
+        }
+
+        .nav-m .logo {
+            float: left;
+            width: 35px;
+            height: 30px;
+            background: no-repeat -225px -158px;
+        }
+
+        .nav-m .title {
+            display: inline-block;
+            float: left;
+            font-size: 20px;
+        }
+
+        .disk {
+            height: 186px;
+            position: relative;
+            zoom: 1;
+            margin: 50px 0 2px;
+            border: 1px solid #d3d3d3;
+        }
+
+        .disk .inner {
+            height: 184px;
+            padding-left: 20px;
+            background: #f5f5f5;
+            border: 1px solid #fff3cd;
+        }
+
+        .disk .roll {
+            display: none;
+            float: left;
+            position: absolute;
+            zoom: 1;
+            width: 653px;
+            height: 180px;
+            overflow: hidden;
+        }
+
+        .roll_activate {
+            display: block!important;
+        }
+
+        .disk .pre {
+            left: 4px;
+            position: absolute;
+            top: 71px;
+            width: 17px;
+            height: 17px;
+        }
+
+        .disk .nxt {
+            position: absolute;
+            top: 71px;
+            width: 17px;
+            height: 17px;
+            right: 4px;
+        }
+
+        .inner a {
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .disk .bg-l {
+            background: no-repeat -260px -75px;
+        }
+
+        .disk .bg-r {
+            background: no-repeat -300px -75px;
+        }
+
+        .disk ul {
+            position: absolute;
+            top: 0;
+            width: 645px;
+            margin: 28px 0 0 0;
+
+        }
+
+        .disk ul li {
+            float: left;
+            display: inline;
+            list-style: none;
+            text-align: -webkit-match-parent;
+            width: 118px;
+            height: 150px;
+            margin-left: 11px;
+            background: no-repeat -260px 100px;
+        }
+
+        .disk .cover {
+            position: relative;
+            display: block;
+            margin-bottom: 7px;
+        }
+
+        .disk .cover-alb1 {
+            width: 100px;
+            height: 100px;
+        }
+
+        .cover img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .cover-alb1 .msk {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 118px;
+            height: 100px;
+            background: no-repeat 0 -570px;
+        }
+
+        .cover-alb1 a {
+            text-decoration: none;
+            color: #333;
+            cursor: pointer;
+        }
+
+        .cover-alb1 .icon-play{
+            display: none;
+            position: absolute;
+            right: 10px;
+            left: 72px;
+            bottom: 5px;
+            width: 22px;
+            height: 22px;
+            background: no-repeat 0 -85px;
+        }
+
+        .disk p {
+            width: 90%;
+            line-height: 18px;
+        }
+
+        .disk .thide {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            word-wrap: normal;
+            padding: 0;
+            margin: 0;
+        }
+
+        .s-fc0 {
+            color: black;
+            font-size: 14px;
+        }
+
+        .s-fc3 {
+            color: #666;
+            font-size: 12px;
+        }
+        /* 排行榜 */
+        .main-list {
+            width: 730px;
+            height: 735px;
+        }
+
+        .main-list .nav-list-top {
+            width: 100%;
+            height: 35px;
+            display: inline-block;
+            padding-left: 10px;
+            border-bottom: 2px solid #8a060b;
+        }
+
+        .nav-list-top .logo {
+            float: left;
+            width: 35px;
+            height: 30px;
+            background: no-repeat -225px -158px;
+        }
+
+        .nav-list-top .title {
+            display: inline-block;
+            float: left;
+            font-size: 20px;
+        }
+
+        .list {
+            height: 472px;
+            width: 730px;
+            margin-top: 20px;
+            padding-left: 1px;
+        }
+
+        .more a {
+            color: black;
+        }
+
+        /* 右侧内容 */
+        .main-r {
+            float: right;
+            width: 250px;
+            height: 1310px;
+            border-left: 1px solid #ccc;
+            border-right: 1px solid #ccc;
+        }
+
+        .main-r .mr-top {
+            height: 126px;
+        }
+
+        .main-r .mr-top p {
+            width: 205px;
+            margin: 0 auto;
+            padding: 16px 0;
+            line-height: 22px;
+        }
+
+        .main-r .mr-top a{
+            background:  #C20C0C ;
+            color: white;
+            padding: 2px;
+            border-radius: 5px;
+            align-content: center;
+            margin-left: 90px;
+        }
+
+        .main-r .mr-middle {
+            height: 455px;
+            width:250px;
+            margin-top: 15px;
+        }
+
+        .main-r .mr-middle h6 {
+            height: 23px;
+            margin: 0 20px;
+            border-bottom: 1px solid #ccc;
+            color: #333;
+        }
+
+        .main-r .mr-middle h6 span {
+            float: left;
+        }
+
+        .main-r .mr-middle h6 a {
+            float: right;
+            color: #666;
+            font-weight: normal;
+        }
+
+        .main-r .mr-middle ul {
+            width: 230px;
+            height: 380px;
+            margin: 6px 0 14px 20px;
+        }
+
+        .main-r .mr-middle ul li {
+            float: left;
+            width: 210px;
+            height: 62px;
+            margin-top: 14px;
+            background: #fafafa;
+        }
+
+        .main-r .mr-middle ul li:hover {
+            cursor: pointer;
+            background-color: #ddd;
+        }
+
+        .main-r .mr-middle ul li img {
+            float: left;
+            width: 62px;
+            height: 62px;
+        }
+
+        .main-r .mr-middle ul li .li-content {
+            float: left;
+            width: 133px;
+            height: 60px;
+            padding-left: 13px;
+            border: 1px solid #e9e9e9;
+            border-left: none;
+        }
+
+        .main-r .mr-middle ul li .li-content span {
+            width: 90%;
+            margin-top: 8px;
+            font-size: 14px;
+        }
+
+
+        .main-r .mr-middle ul li .li-content p {
+            width: 90%;
+            margin-top: 8px;
+            font-size: 12px;
+        }
+
+        .main-r .mr-middle .ask .a-content {
+            margin-left: 20px;
+            border-radius: 4px;
+        }
+
+        .main-r .mr-middle .ask .a-content i {
+            display: inline-block;
+            height: 31px;
+            width: 170px;
+            padding: 0 15px 0 20px;
+            line-height: 31px;
+            text-align: center;
+            font-weight: normal;
+            font-size: 14px;
+            color: #1d2124;
+        }
+
+        .main-r .mr-bottom {
+            width: 250px;
+            height: 294px;
+            margin-top: 30px;
+        }
+
+        .main-r .mr-bottom h6 {
+            height: 23px;
+            margin: 0 20px;
+            border-bottom: 1px solid #ccc;
+            color: #333;
+            font-size: 16px;
+        }
+
+        .main-r .mr-bottom ul {
+            margin: 20px 0 0 20px;
+        }
+
+        .main-r .mr-bottom ul li {
+            float: left;
+            width: 210px;
+            height: 50px;
+            cursor: pointer;
+        }
+
+        .main-r .mr-bottom ul li img {
+            float: left;
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+            box-shadow: 0 0 1px #333 inset;
+        }
+
+        .main-r .mr-bottom ul li .lc {
+            line-height: 21px;
+            font-size: 12px;
+        }
+
+        .foot {
+            height: 172px;
+            width: 100%;
+            border-top: 2px solid #d3d3d3;
+            background: #f2f2f2;
+        }
+
+        :root {
+            --blue: #007bff;
+            --indigo: #6610f2;
+            --purple: #6f42c1;
+            --pink: #e83e8c;
+            --red: #dc3545;
+            --orange: #fd7e14;
+            --yellow: #ffc107;
+            --green: #28a745;
+            --teal: #20c997;
+            --cyan: #17a2b8;
+            --white: #fff;
+            --gray: #6c757d;
+            --gray-dark: #343a40;
+            --primary: #007bff;
+            --secondary: #6c757d;
+            --success: #28a745;
+            --info: #17a2b8;
+            --warning: #ffc107;
+            --danger: #dc3545;
+            --light: #f8f9fa;
+            --dark: #343a40;
+            --breakpoint-xs: 0;
+            --breakpoint-sm: 576px;
+            --breakpoint-md: 768px;
+            --breakpoint-lg: 992px;
+            --breakpoint-xl: 1200px;
+            --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        html {
+            font-family: sans-serif;
+            line-height: 1.15;
+            -webkit-text-size-adjust: 100%;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+
+        article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+            display: block;
+        }
+
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #212529;
+            text-align: left;
+            background-color: #fff;
+        }
+
+        [tabindex="-1"]:focus:not(:focus-visible) {
+            outline: 0 !important;
+        }
+
+        hr {
+            box-sizing: content-box;
+            height: 0;
+            overflow: visible;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        abbr[title],
+        abbr[data-original-title] {
+            text-decoration: underline;
+            -webkit-text-decoration: underline dotted;
+            text-decoration: underline dotted;
+            cursor: help;
+            border-bottom: 0;
+            -webkit-text-decoration-skip-ink: none;
+            text-decoration-skip-ink: none;
+        }
+
+        address {
+            margin-bottom: 1rem;
+            font-style: normal;
+            line-height: inherit;
+        }
+
+        ol,
+        ul,
+        dl {
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        ol ol,
+        ul ul,
+        ol ul,
+        ul ol {
+            margin-bottom: 0;
+        }
+
+        dt {
+            font-weight: 700;
+        }
+
+        dd {
+            margin-bottom: .5rem;
+            margin-left: 0;
+        }
+
+        blockquote {
+            margin: 0 0 1rem;
+        }
+
+        b,
+        strong {
+            font-weight: bolder;
+        }
+
+        small {
+            font-size: 80%;
+        }
+
+        sub,
+        sup {
+            position: relative;
+            font-size: 75%;
+            line-height: 0;
+            vertical-align: baseline;
+        }
+
+        sub {
+            bottom: -.25em;
+        }
+
+        sup {
+            top: -.5em;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+            background-color: transparent;
+        }
+
+        a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+
+        a:not([href]):not([class]) {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        a:not([href]):not([class]):hover {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        pre,
+        code,
+        kbd,
+        samp {
+            font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            font-size: 1em;
+        }
+
+        pre {
+            margin-top: 0;
+            margin-bottom: 1rem;
+            overflow: auto;
+            -ms-overflow-style: scrollbar;
+        }
+
+        figure {
+            margin: 0 0 1rem;
+        }
+
+        img {
+            vertical-align: middle;
+            border-style: none;
+        }
+
+        svg {
+            overflow: hidden;
+            vertical-align: middle;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        caption {
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem;
+            color: #6c757d;
+            text-align: left;
+            caption-side: bottom;
+        }
+
+        th {
+            text-align: inherit;
+            text-align: -webkit-match-parent;
+        }
+
+        label {
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+
+        button {
+            border-radius: 0;
+        }
+
+        button:focus:not(:focus-visible) {
+            outline: 0;
+        }
+
+        input,
+        button,
+        select,
+        optgroup,
+        textarea {
+            margin: 0;
+            font-family: inherit;
+            font-size: inherit;
+            line-height: inherit;
+        }
+
+        button,
+        input {
+            overflow: visible;
+        }
+
+        button,
+        select {
+            text-transform: none;
+        }
+
+        [role="button"] {
+            cursor: pointer;
+        }
+
+        select {
+            word-wrap: normal;
+        }
+
+        button,
+        [type="button"],
+        [type="reset"],
+        [type="submit"] {
+            -webkit-appearance: button;
+        }
+
+        button:not(:disabled),
+        [type="button"]:not(:disabled),
+        [type="reset"]:not(:disabled),
+        [type="submit"]:not(:disabled) {
+            cursor: pointer;
+        }
+
+        button::-moz-focus-inner,
+        [type="button"]::-moz-focus-inner,
+        [type="reset"]::-moz-focus-inner,
+        [type="submit"]::-moz-focus-inner {
+            padding: 0;
+            border-style: none;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            box-sizing: border-box;
+            padding: 0;
+        }
+
+        textarea {
+            overflow: auto;
+            resize: vertical;
+        }
+
+        fieldset {
+            min-width: 0;
+            padding: 0;
+            margin: 0;
+            border: 0;
+        }
+
+        legend {
+            display: block;
+            width: 100%;
+            max-width: 100%;
+            padding: 0;
+            margin-bottom: .5rem;
+            font-size: 1.5rem;
+            line-height: inherit;
+            color: inherit;
+            white-space: normal;
+        }
+
+        progress {
+            vertical-align: baseline;
+        }
+
+        [type="number"]::-webkit-inner-spin-button,
+        [type="number"]::-webkit-outer-spin-button {
+            height: auto;
+        }
+
+        [type="search"] {
+            outline-offset: -2px;
+            -webkit-appearance: none;
+        }
+
+        [type="search"]::-webkit-search-decoration {
+            -webkit-appearance: none;
+        }
+
+        ::-webkit-file-upload-button {
+            font: inherit;
+            -webkit-appearance: button;
+        }
+
+        output {
+            display: inline-block;
+        }
+
+        summary {
+            display: list-item;
+            cursor: pointer;
+        }
+
+        template {
+            display: none;
+        }
+
+        [hidden] {
+            display: none !important;
+        }
+
+        h1, h2, h3, h4, h5, h6,
+        .h1, .h2, .h3, .h4, .h5, .h6 {
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            line-height: 1.2;
+        }
+
+        h1, .h1 {
+            font-size: 2.5rem;
+        }
+
+        h2, .h2 {
+            font-size: 2rem;
+        }
+
+        h3, .h3 {
+            font-size: 1.75rem;
+        }
+
+        h4, .h4 {
+            font-size: 1.5rem;
+        }
+
+        h5, .h5 {
+            font-size: 1.25rem;
+        }
+
+        h6, .h6 {
+            font-size: 1rem;
+        }
+
+        hr {
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            border: 0;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        small,
+        .small {
+            font-size: 80%;
+            font-weight: 400;
+        }
+
+        mark,
+        .mark {
+            padding: 0.2em;
+            background-color: #fcf8e3;
+        }
+
+        code {
+            font-size: 87.5%;
+            color: #e83e8c;
+            word-wrap: break-word;
+        }
+
+        a > code {
+            color: inherit;
+        }
+
+        kbd {
+            padding: 0.2rem 0.4rem;
+            font-size: 87.5%;
+            color: #fff;
+            background-color: #212529;
+            border-radius: 0.2rem;
+        }
+
+        kbd kbd {
+            padding: 0;
+            font-size: 100%;
+            font-weight: 700;
+        }
+
+        pre {
+            display: block;
+            font-size: 87.5%;
+            color: #212529;
+        }
+
+        pre code {
+            font-size: inherit;
+            color: inherit;
+            word-break: normal;
+        }
+
+        .no-gutters > .col,
+        .no-gutters > [class*="col-"] {
+            padding-right: 0;
+            padding-left: 0;
+        }
+
+        .row-cols-1 > * {
+            -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+
+        .row-cols-2 > * {
+            -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+
+        .row-cols-3 > * {
+            -ms-flex: 0 0 33.333333%;
+            flex: 0 0 33.333333%;
+            max-width: 33.333333%;
+        }
+
+        .row-cols-4 > * {
+            -ms-flex: 0 0 25%;
+            flex: 0 0 25%;
+            max-width: 25%;
+        }
+
+        .row-cols-5 > * {
+            -ms-flex: 0 0 20%;
+            flex: 0 0 20%;
+            max-width: 20%;
+        }
+
+        .row-cols-6 > * {
+            -ms-flex: 0 0 16.666667%;
+            flex: 0 0 16.666667%;
+            max-width: 16.666667%;
+        }
+
+            .row-cols-sm-1 > * {
+                -ms-flex: 0 0 100%;
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+            .row-cols-sm-2 > * {
+                -ms-flex: 0 0 50%;
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+            .row-cols-sm-3 > * {
+                -ms-flex: 0 0 33.333333%;
+                flex: 0 0 33.333333%;
+                max-width: 33.333333%;
+            }
+            .row-cols-sm-4 > * {
+                -ms-flex: 0 0 25%;
+                flex: 0 0 25%;
+                max-width: 25%;
+            }
+            .row-cols-sm-5 > * {
+                -ms-flex: 0 0 20%;
+                flex: 0 0 20%;
+                max-width: 20%;
+            }
+            .row-cols-sm-6 > * {
+                -ms-flex: 0 0 16.666667%;
+                flex: 0 0 16.666667%;
+                max-width: 16.666667%;
+            }
+
+            .row-cols-xl-1 > * {
+                -ms-flex: 0 0 100%;
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+            .row-cols-xl-2 > * {
+                -ms-flex: 0 0 50%;
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+            .row-cols-xl-3 > * {
+                -ms-flex: 0 0 33.333333%;
+                flex: 0 0 33.333333%;
+                max-width: 33.333333%;
+            }
+            .row-cols-xl-4 > * {
+                -ms-flex: 0 0 25%;
+                flex: 0 0 25%;
+                max-width: 25%;
+            }
+            .row-cols-xl-5 > * {
+                -ms-flex: 0 0 20%;
+                flex: 0 0 20%;
+                max-width: 20%;
+            }
+            .row-cols-xl-6 > * {
+                -ms-flex: 0 0 16.666667%;
+                flex: 0 0 16.666667%;
+                max-width: 16.666667%;
+            }
+
+        .table {
+            width: 100%;
+            margin-bottom: 1rem;
+            color: #212529;
+        }
+
+        .table th,
+        .table td {
+            padding: 0.75rem;
+            vertical-align: top;
+            border-top: 1px solid #dee2e6;
+        }
+
+        .table thead th {
+            vertical-align: bottom;
+            border-bottom: 2px solid #dee2e6;
+        }
+
+        .table tbody + tbody {
+            border-top: 2px solid #dee2e6;
+        }
+
+        .table-sm th,
+        .table-sm td {
+            padding: 0.3rem;
+        }
+
+        .table-bordered th,
+        .table-bordered td {
+            border: 1px solid #dee2e6;
+        }
+
+        .table-bordered thead th,
+        .table-bordered thead td {
+            border-bottom-width: 2px;
+        }
+
+        .table-borderless th,
+        .table-borderless td,
+        .table-borderless thead th,
+        .table-borderless tbody + tbody {
+            border: 0;
+        }
+
+        .table-striped tbody tr:nth-of-type(odd) {
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+
+        .table-hover tbody tr:hover {
+            color: #212529;
+            background-color: rgba(0, 0, 0, 0.075);
+        }
+
+        .table-primary > th,
+        .table-primary > td {
+            background-color: #b8daff;
+        }
+
+        .table-primary th,
+        .table-primary td,
+        .table-primary thead th,
+        .table-primary tbody + tbody {
+            border-color: #7abaff;
+        }
+
+        .table-hover .table-primary:hover {
+            background-color: #9fcdff;
+        }
+
+        .table-hover .table-primary:hover > td,
+        .table-hover .table-primary:hover > th {
+            background-color: #9fcdff;
+        }
+
+        .table-secondary > th,
+        .table-secondary > td {
+            background-color: #d6d8db;
+        }
+
+        .table-secondary th,
+        .table-secondary td,
+        .table-secondary thead th,
+        .table-secondary tbody + tbody {
+            border-color: #b3b7bb;
+        }
+
+        .table-hover .table-secondary:hover {
+            background-color: #c8cbcf;
+        }
+
+        .table-hover .table-secondary:hover > td,
+        .table-hover .table-secondary:hover > th {
+            background-color: #c8cbcf;
+        }
+
+        .table-success > th,
+        .table-success > td {
+            background-color: #c3e6cb;
+        }
+
+        .table-success th,
+        .table-success td,
+        .table-success thead th,
+        .table-success tbody + tbody {
+            border-color: #8fd19e;
+        }
+
+        .table-hover .table-success:hover {
+            background-color: #b1dfbb;
+        }
+
+        .table-hover .table-success:hover > td,
+        .table-hover .table-success:hover > th {
+            background-color: #b1dfbb;
+        }
+
+        .table-info > th,
+        .table-info > td {
+            background-color: #bee5eb;
+        }
+
+        .table-info th,
+        .table-info td,
+        .table-info thead th,
+        .table-info tbody + tbody {
+            border-color: #86cfda;
+        }
+
+        .table-hover .table-info:hover {
+            background-color: #abdde5;
+        }
+
+        .table-hover .table-info:hover > td,
+        .table-hover .table-info:hover > th {
+            background-color: #abdde5;
+        }
+
+        .table-warning > th,
+        .table-warning > td {
+            background-color: #ffeeba;
+        }
+
+        .table-warning th,
+        .table-warning td,
+        .table-warning thead th,
+        .table-warning tbody + tbody {
+            border-color: #ffdf7e;
+        }
+
+        .table-hover .table-warning:hover {
+            background-color: #ffe8a1;
+        }
+
+        .table-hover .table-warning:hover > td,
+        .table-hover .table-warning:hover > th {
+            background-color: #ffe8a1;
+        }
+
+        .table-danger > th,
+        .table-danger > td {
+            background-color: #f5c6cb;
+        }
+
+        .table-danger th,
+        .table-danger td,
+        .table-danger thead th,
+        .table-danger tbody + tbody {
+            border-color: #ed969e;
+        }
+
+        .table-hover .table-danger:hover {
+            background-color: #f1b0b7;
+        }
+
+        .table-hover .table-danger:hover > td,
+        .table-hover .table-danger:hover > th {
+            background-color: #f1b0b7;
+        }
+
+        .table-light > th,
+        .table-light > td {
+            background-color: #fdfdfe;
+        }
+
+        .table-light th,
+        .table-light td,
+        .table-light thead th,
+        .table-light tbody + tbody {
+            border-color: #fbfcfc;
+        }
+
+        .table-hover .table-light:hover {
+            background-color: #ececf6;
+        }
+
+        .table-hover .table-light:hover > td,
+        .table-hover .table-light:hover > th {
+            background-color: #ececf6;
+        }
+
+        .table-dark > th,
+        .table-dark > td {
+            background-color: #c6c8ca;
+        }
+
+        .table-dark th,
+        .table-dark td,
+        .table-dark thead th,
+        .table-dark tbody + tbody {
+            border-color: #95999c;
+        }
+
+        .table-hover .table-dark:hover {
+            background-color: #b9bbbe;
+        }
+
+        .table-hover .table-dark:hover > td,
+        .table-hover .table-dark:hover > th {
+            background-color: #b9bbbe;
+        }
+
+        .table-active > th,
+        .table-active > td {
+            background-color: rgba(0, 0, 0, 0.075);
+        }
+
+        .table-hover .table-active:hover {
+            background-color: rgba(0, 0, 0, 0.075);
+        }
+
+        .table-hover .table-active:hover > td,
+        .table-hover .table-active:hover > th {
+            background-color: rgba(0, 0, 0, 0.075);
+        }
+
+        .table .thead-dark th {
+            color: #fff;
+            background-color: #343a40;
+            border-color: #454d55;
+        }
+
+        .table .thead-light th {
+            color: #495057;
+            background-color: #e9ecef;
+            border-color: #dee2e6;
+        }
+
+        .table-dark th,
+        .table-dark td,
+        .table-dark thead th {
+            border-color: #454d55;
+        }
+
+        .table-dark.table-striped tbody tr:nth-of-type(odd) {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        .table-dark.table-hover tbody tr:hover {
+            color: #fff;
+            background-color: rgba(255, 255, 255, 0.075);
+        }
+
+        @media (max-width: 575.98px) {
+            .table-responsive-sm {
+                display: block;
+                width: 100%;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            .table-responsive-sm > .table-bordered {
+                border: 0;
+            }
+        }
+
+        @media (max-width: 767.98px) {
+            .table-responsive-md {
+                display: block;
+                width: 100%;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            .table-responsive-md > .table-bordered {
+                border: 0;
+            }
+        }
+
+        @media (max-width: 991.98px) {
+            .table-responsive-lg {
+                display: block;
+                width: 100%;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            .table-responsive-lg > .table-bordered {
+                border: 0;
+            }
+        }
+
+        @media (max-width: 1199.98px) {
+            .table-responsive-xl {
+                display: block;
+                width: 100%;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            .table-responsive-xl > .table-bordered {
+                border: 0;
+            }
+        }
+
+        .table-responsive > .table-bordered {
+            border: 0;
+        }
+
+        .form-control {
+            display: block;
+            width: 100%;
+            height: calc(1.5em + 0.75rem + 2px);
+            padding: 0.375rem 0.75rem;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #495057;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #ced4da;
+            border-radius: 0.25rem;
+            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .form-control {
+                transition: none;
+            }
+        }
+
+        .form-control::-ms-expand {
+            background-color: transparent;
+            border: 0;
+        }
+
+        .form-control:focus {
+            color: #495057;
+            background-color: #fff;
+            border-color: #80bdff;
+            outline: 0;
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+        }
+
+        .form-control::-webkit-input-placeholder {
+            color: #6c757d;
+            opacity: 1;
+        }
+
+        .form-control::-moz-placeholder {
+            color: #6c757d;
+            opacity: 1;
+        }
+
+        .form-control:-ms-input-placeholder {
+            color: #6c757d;
+            opacity: 1;
+        }
+
+        .form-control::-ms-input-placeholder {
+            color: #6c757d;
+            opacity: 1;
+        }
+
+        .form-control::placeholder {
+            color: #6c757d;
+            opacity: 1;
+        }
+
+        .form-control:disabled, .form-control[readonly] {
+            background-color: #e9ecef;
+            opacity: 1;
+        }
+
+        input[type="date"].form-control,
+        input[type="time"].form-control,
+        input[type="datetime-local"].form-control,
+        input[type="month"].form-control {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        }
+
+        select.form-control:-moz-focusring {
+            color: transparent;
+            text-shadow: 0 0 0 #495057;
+        }
+
+        select.form-control:focus::-ms-value {
+            color: #495057;
+            background-color: #fff;
+        }
+
+        @media (min-width: 576px) {
+            .form-inline label {
+                display: -ms-flexbox;
+                display: flex;
+                -ms-flex-align: center;
+                align-items: center;
+                -ms-flex-pack: center;
+                justify-content: center;
+                margin-bottom: 0;
+            }
+            .form-inline .form-group {
+                display: -ms-flexbox;
+                display: flex;
+                -ms-flex: 0 0 auto;
+                flex: 0 0 auto;
+                -ms-flex-flow: row wrap;
+                flex-flow: row wrap;
+                -ms-flex-align: center;
+                align-items: center;
+                margin-bottom: 0;
+            }
+            .form-inline .form-control {
+                display: inline-block;
+                width: auto;
+                vertical-align: middle;
+            }
+            .form-inline .form-control-plaintext {
+                display: inline-block;
+            }
+            .form-inline .input-group,
+            .form-inline .custom-select {
+                width: auto;
+            }
+            .form-inline .form-check {
+                display: -ms-flexbox;
+                display: flex;
+                -ms-flex-align: center;
+                align-items: center;
+                -ms-flex-pack: center;
+                justify-content: center;
+                width: auto;
+                padding-left: 0;
+            }
+            .form-inline .form-check-input {
+                position: relative;
+                -ms-flex-negative: 0;
+                flex-shrink: 0;
+                margin-top: 0;
+                margin-right: 0.25rem;
+                margin-left: 0;
+            }
+            .form-inline .custom-control {
+                -ms-flex-align: center;
+                align-items: center;
+                -ms-flex-pack: center;
+                justify-content: center;
+            }
+            .form-inline .custom-control-label {
+                margin-bottom: 0;
+            }
+        }
+
+        .btn {
+            display: inline-block;
+            font-weight: 400;
+            color: #212529;
+            text-align: center;
+            vertical-align: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            background-color: transparent;
+            border: 1px solid transparent;
+            padding: 0.375rem 0.75rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            border-radius: 0.25rem;
+            transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .btn {
+                transition: none;
+            }
+        }
+
+        .btn:hover {
+            color: #212529;
+            text-decoration: none;
+        }
+
+        .btn:focus, .btn.focus {
+            outline: 0;
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+        }
+
+        .btn.disabled, .btn:disabled {
+            opacity: 0.65;
+        }
+
+        .btn:not(:disabled):not(.disabled) {
+            cursor: pointer;
+        }
+
+        a.btn.disabled,
+        fieldset:disabled a.btn {
+            pointer-events: none;
+        }
+
+
+
+        .btn-outline-success {
+            color: #fff;
+            border-color: #cccccc;
+        }
+
+        .btn-outline-success:hover {
+            color: #fff;
+            background-color: #C20C0C;
+            border-color: #C20C0C;
+        }
+
+        .btn-outline-success:focus, .btn-outline-success.focus {
+            box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
+        }
+
+        .btn-outline-success.disabled, .btn-outline-success:disabled {
+            color: #28a745;
+            background-color: transparent;
+        }
+
+        .btn-outline-success:not(:disabled):not(.disabled):active, .btn-outline-success:not(:disabled):not(.disabled).active,
+        .show > .btn-outline-success.dropdown-toggle {
+            color: #fff;
+            background-color: #28a745;
+            border-color: #28a745;
+        }
+
+        .btn-outline-success:not(:disabled):not(.disabled):active:focus, .btn-outline-success:not(:disabled):not(.disabled).active:focus,
+        .show > .btn-outline-success.dropdown-toggle:focus {
+            box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
+        }
+
+        .btn-block + .btn-block {
+            margin-top: 0.5rem;
+        }
+
+        input[type="submit"].btn-block,
+        input[type="reset"].btn-block,
+        input[type="button"].btn-block {
+            width: 100%;
+        }
+
+        .nav {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            padding-left: 0;
+            margin-bottom: 0;
+            list-style: none;
+        }
+
+        .nav-tabs .nav-link {
+            margin-bottom: -1px;
+            border: 1px solid transparent;
+            border-top-left-radius: 0.25rem;
+            border-top-right-radius: 0.25rem;
+        }
+
+        .nav-tabs .nav-link:hover, .nav-tabs .nav-link:focus {
+            border-color: #e9ecef #e9ecef #dee2e6;
+        }
+
+        .nav-tabs .nav-link.disabled {
+            color: #6c757d;
+            background-color: transparent;
+            border-color: transparent;
+        }
+
+        .nav-tabs .nav-link.active,
+        .nav-tabs .nav-item.show .nav-link {
+            color: #495057;
+            background-color: #fff;
+            border-color: #dee2e6 #dee2e6 #fff;
+        }
+
+        .nav-tabs .dropdown-menu {
+            margin-top: -1px;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+
+        .nav-pills .nav-link {
+            border-radius: 0.25rem;
+        }
+
+        .nav-pills .nav-link.active,
+        .nav-pills .show > .nav-link {
+            color: #fff;
+            background-color: #007bff;
+        }
+
+        .nav-fill > .nav-link,
+        .nav-fill .nav-item {
+            -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+            text-align: center;
+        }
+
+        .nav-justified > .nav-link,
+        .nav-justified .nav-item {
+            -ms-flex-preferred-size: 0;
+            flex-basis: 0;
+            -ms-flex-positive: 1;
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        .tab-content > .tab-pane {
+            display: none;
+        }
+
+        .tab-content > .active {
+            display: block;
+        }
+
+        .navbar {
+            position: relative;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            -ms-flex-align: center;
+            align-items: center;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+            padding: 1rem 1rem;
+        }
+
+        .navbar .container,
+        .navbar .container-fluid, .navbar .container-sm, .navbar .container-md, .navbar .container-lg, .navbar .container-xl {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            -ms-flex-align: center;
+            align-items: center;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+        }
+
+        .navbar-nav .nav-link {
+            padding-right: 0;
+            padding-left: 0;
+        }
+
+        .navbar-nav .dropdown-menu {
+            position: static;
+            float: none;
+        }
+
+            .list-group-horizontal-sm > .list-group-item:first-child {
+                border-bottom-left-radius: 0.25rem;
+                border-top-right-radius: 0;
+            }
+            .list-group-horizontal-sm > .list-group-item:last-child {
+                border-top-right-radius: 0.25rem;
+                border-bottom-left-radius: 0;
+            }
+            .list-group-horizontal-sm > .list-group-item.active {
+                margin-top: 0;
+            }
+            .list-group-horizontal-sm > .list-group-item + .list-group-item {
+                border-top-width: 1px;
+                border-left-width: 0;
+            }
+            .list-group-horizontal-sm > .list-group-item + .list-group-item.active {
+                margin-left: -1px;
+                border-left-width: 1px;
+            }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            z-index: 1;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-align: center;
+            align-items: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            width: 15%;
+            padding: 0;
+            color: #fff;
+            text-align: center;
+            background: none;
+            border: 0;
+            opacity: 0.5;
+            transition: opacity 0.15s ease;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .carousel-control-prev,
+            .carousel-control-next {
+                transition: none;
+            }
+        }
+
+        .carousel-control-prev:hover, .carousel-control-prev:focus,
+        .carousel-control-next:hover,
+        .carousel-control-next:focus {
+            color: #fff;
+            text-decoration: none;
+            outline: 0;
+            opacity: 0.9;
+        }
+
+        .carousel-control-prev {
+            left: 0;
+        }
+
+        .carousel-control-next {
+            right: 0;
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background: 50% / 100% 100% no-repeat;
+        }
+
+        .carousel-indicators li {
+            box-sizing: content-box;
+            -ms-flex: 0 1 auto;
+            flex: 0 1 auto;
+            width: 30px;
+            height: 3px;
+            margin-right: 3px;
+            margin-left: 3px;
+            text-indent: -999px;
+            cursor: pointer;
+            background-color: #fff;
+            background-clip: padding-box;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            opacity: .5;
+            transition: opacity 0.6s ease;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .carousel-indicators li {
+                transition: none;
+            }
+        }
+
+        .carousel-indicators .active {
+            opacity: 1;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+
+        .w-100 {
+            width: 100% !important;
+        }
+
+        .my-2 {
+            margin-bottom: 0.5rem !important;
+        }
+
+        @media (min-width: 576px) {
+
+            .my-sm-0 {
+                margin-top: 0 !important;
+            }
+
+            .my-sm-0 {
+                margin-bottom: 0 !important;
+            }
+
+                margin-top: 0.25rem !important;
+            }
+
+
+            .mr-sm-2,
+            .mx-sm-2 {
+                margin-right: 0.5rem !important;
+            }
+
+
+    </style>
+
+</head>
+
+<body>
+<div class="page-header">
+    <!--一级导航栏-->
+    <div class="top">
+        <div class="bread">
+            <ul class="nav">
+                <li class="li111">
+                    <h2>网易云音乐</h2>
+                </li>
+                <span class="logo"></span>
+                <li class="first">
+                <span>
+                    <a href="#"> <em>发现音乐</em></a>
+                    <span class="cov"></span>
+                </span>
+                </li>
+                <li>
+                <span>
+                    <a href="#"> <em>我的音乐</em></a>
+                 </span>
+                </li>
+                <li>
+                <span>
+                    <a href="#"> <em>我的关注</em></a>
+                 </span>
+                </li>
+                <li>
+                <span>
+                    <a href="#"> <em>音乐商城</em></a>
+                 </span>
+                </li>
+                <li >
+                <span>
+                    <a href="#"> <em>开通会员</em></a>
+                 </span>
+                </li>
+
+            </ul>
+
+            <div>
+                <nav class="navbar navbar-light bg-light">
+                    <form class="form-inline">
+                        <input class="form-control mr-sm-2" type="search" placeholder="音乐/电台/歌手/用户" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">搜索</button>
+                    </form>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!--二级导航栏-->
+    <div class="wrap">
+        <div class="w_body">
+            <div class="bread">
+            <ul class="navitems">
+                <li class="first">
+                <span>
+                    <a href="#"> <em>热门推荐</em></a>
+                    <span class="cov"></span>
+                </span>
+                </li>
+                <li>
+                <span>
+                    <a href="#"> <em>排行榜</em></a>
+                 </span>
+                </li>
+                <li>
+                <span>
+                    <a href="#"> <em>主播电台</em></a>
+                 </span>
+                </li>
+                <li>
+                <span>
+                    <a href="#"> <em>歌手</em></a>
+                 </span>
+                </li>
+                <li class="last">
+                <span>
+                    <a href="#"> <em>新碟上架</em></a>
+                 </span>
+                </li>
+
+            </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!--顶部结束-->
+
+<!--滚动展示-->
+<div class="two">
+    <div class="show">
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="../images/01.jpg" class="d-block w-100" width="1100px" height="420px" alt="..."
+                         data-adaptive-background >
+            </div>
+            <button class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-target="#carouselExampleControls" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </button>
+        </div>
+    </div>
+</div>
+
+<!--主体部分-->
+<div class="main">
+    <!--推荐-->
+    <div class="main-l left">
+        <div class="m-l-top">
+            <div class="top-nav">
+                <span class="top-nav-logo"></span>
+                <p class="title">热门推荐</p>
+                <div class="top-nav-m">
+                    <span>|</span>
+                    <a href="#">华语</a>
+                    <span>|</span>
+                    <a href="#">流行</a>
+                    <span>|</span>
+                    <a href="#">摇滚</a>
+                    <span>|</span>
+                    <a href="#">民谣</a>
+                    <span>|</span>
+                    <a href="#">影视</a>
+                    <span>|</span>
+                </div>
+            </div>
+            <ul class="m-cvrlst">
+                <li>
+                    <div class="u-cover">
+                        <img src="../images/l0.jpg" width="150px" height="150px" alt="推荐列表">
+                        <a href="futureMaking.html"></a>
+                        <div class="bottom">
+                            <a class="icon-play"></a>
+                            <span class="icon-headset"></span>
+                        </div>
+                        <p class="dec">7月14日上映的喜剧动画电影《茶啊二中》</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="u-cover">
+                        <img src="../images/l1.jpg" width="150px" height="150px" alt="推荐列表">
+                        <a href="futureMaking.html"></a>
+                        <div class="bottom">
+                            <a class="icon-play"></a>
+                            <span class="icon-headset"></span>
+                        </div>
+                        <p class="dec">刘宇宁首支国际化背景单曲《That Girl》上线</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="u-cover">
+                        <img src="../images/l2.jpg" width="150px" height="150px" alt="推荐列表">
+                        <a href="futureMaking.html"></a>
+                        <div class="bottom">
+                            <a class="icon-play"></a>
+                            <span class="icon-headset"></span>
+                        </div>
+                        <p class="dec">刘宇宁全民喜剧《我和我的家乡》推广曲</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="u-cover">
+                        <img src="../images/l3.jpg" width="150px" height="150px" alt="推荐列表">
+                        <a href="futureMaking.html"></a>
+                        <div class="bottom">
+                            <a class="icon-play"></a>
+                            <span class="icon-headset"></span>
+                        </div>
+                        <p class="dec">刘宇宁为电影《不老奇事》献唱的主题曲</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="u-cover">
+                        <img src="../images/l4.jpg" width="150px" height="150px" alt="推荐列表">
+                        <a href="futureMaking.html"></a>
+                        <div class="bottom">
+                            <a class="icon-play"></a>
+                            <span class="icon-headset"></span>
+                        </div>
+                        <p class="dec">刘宇宁献唱的电视剧《与君歌》片头曲</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="u-cover">
+                        <img src="../images/l5.jpg" width="150px" height="150px" alt="推荐列表">
+                        <a href="futureMaking.html"></a>
+                        <div class="bottom">
+                            <a class="icon-play"></a>
+                            <span class="icon-headset"></span>
+                        </div>
+                        <p class="dec">摩登兄弟刘宇宁全新主题曲《我行即我道》</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="u-cover">
+                        <img src="../images/l6.jpg" width="150px" height="150px" alt="推荐列表">
+                        <a href="futureMaking.html"></a>
+                        <div class="bottom">
+                            <a class="icon-play"></a>
+                            <span class="icon-headset"></span>
+                        </div>
+                        <p class="dec">金曲捞刘宇宁《光年之外》霸榜网易云</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="u-cover">
+                        <img src="../images/l7.jpg" width="150px" height="150px" alt="推荐列表">
+                        <a href="futureMaking.html"></a>
+                        <div class="bottom">
+                            <a class="icon-play"></a>
+                            <span class="icon-headset"></span>
+                        </div>
+                        <p class="dec">摩登兄弟刘宇宁《苍兰诀》电视剧主题曲</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="main-l-middle">
+            <div class="nav-m">
+                <span class="logo"></span>
+                <div class="title">热门影视OST</div>
+                <div class="disk">
+                    <a class="pre bg-l" id="left" onclick="show_left()">&nbsp;</a>
+                    <div class="inner">
+                        <div class="roll roll_activate" id="roll1">
+                            <ul>
+                                <li>
+                                    <div class="cover cover-alb1">
+                                        <img src="../images/d0.jpg" alt="让酒">
+                                        <a href="#" class="msk"></a>
+                                        <a href="#" class="icon-play"></a>
+                                    </div>
+                                    <p class="thide">
+                                        <a class="s-fc0">让酒</a>
+                                    </p>
+                                    <p class="thide">
+                                        <a class="s-fc3">摩登兄弟刘宇宁</a>
+                                    </p>
+                                </li>
+                               <li>
+                                   <div class="cover cover-alb1">
+                                       <img src="../images/d1.jpg" alt="直到时间尽头">
+                                       <a href="#" class="msk"></a>
+                                       <a href="#" class="icon-play"></a>
+                                   </div>
+                                   <p class="thide">
+                                       <a class="s-fc0">直到时间尽头</a>
+                                   </p>
+                                   <p class="thide">
+                                       <a class="s-fc3">摩登兄弟刘宇宁</a>
+                                   </p>
+                               </li>
+
+                                <li>
+                                    <div class="cover cover-alb1">
+                                        <img src="../images/d2.jpg" alt="千里江山">
+                                        <a href="#" class="msk"></a>
+                                        <a href="#" class="icon-play"></a>
+                                    </div>
+                                    <p class="thide">
+                                        <a class="s-fc0">千里江山</a>
+                                    </p>
+                                    <p class="thide">
+                                        <a class="s-fc3">摩登兄弟刘宇宁</a>
+                                    </p>
+                                </li>
+                                <li>
+                                    <div class="cover cover-alb1">
+                                        <img src="../images/d3.jpg" alt="愿重逢">
+                                        <a href="#" class="msk"></a>
+                                        <a href="#" class="icon-play"></a>
+                                    </div>
+                                    <p class="thide">
+                                        <a class="s-fc0">愿重逢</a>
+                                    </p>
+                                    <p class="thide">
+                                        <a class="s-fc3">摩登兄弟刘宇宁</a>
+                                    </p>
+                                </li>
+                                <li id="test">
+                                    <div class="cover cover-alb1">
+                                        <img src="../images/d4.jpg" alt="海">
+                                        <a href="#" class="msk"></a>
+                                        <a href="#" class="icon-play"></a>
+                                    </div>
+                                    <p class="thide">
+                                        <a class="s-fc0">海</a>
+                                    </p>
+                                    <p class="thide">
+                                        <a class="s-fc3">摩登兄弟刘宇宁</a>
+                                    </p>
+                                </li>
+
+                            </ul>
+                        </div>
+                        <div class="roll" id="roll2">
+                        </div>
+                        <a href="javascript:void(0)" class="nxt bg-r r" id="right" onclick="show_right()">&nbsp;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-list">
+            <div class="nav-list-top">
+                <span class="logo"></span>
+                <div class="title">本周金曲榜</div>
+            </div>
+            <div class="list">
+                <table class="table table-striped">
+                    <thead>
+
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>摩登兄弟刘宇宁</td>
+                        <td><a href="#">引力</a></td>
+                        <td>《向风而行》影视剧原声带</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>摩登兄弟刘宇宁</td>
+                        <td><a href="#">清晖</a></td>
+                        <td>《卿卿日常》影视剧原声带</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>摩登兄弟刘宇宁</td>
+                        <td><a href="#">爱是不放手</a></td>
+                        <td>《谁都知道我爱你》影视剧原声带</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">4</th>
+                        <td>摩登兄弟刘宇宁</td>
+                        <td><a href="#">寻一个你</a></td>
+                        <td>《苍兰诀》影视剧原声带</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">5</th>
+                        <td>摩登兄弟刘宇宁</td>
+                        <td><a href="#">天问</a></td>
+                        <td>《山河令》影视剧原声带</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">6</th>
+                        <td>摩登兄弟刘宇宁</td>
+                        <td><a href="#">无双</a></td>
+                        <td>《且试天下》影视剧原声带</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">7</th>
+                        <td>摩登兄弟刘宇宁</td>
+                        <td><a href="#">烟火星辰</a></td>
+                        <td>《你是我的荣耀》</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">8</th>
+                        <td>摩登兄弟刘宇宁</td>
+                        <td><a href="#">追光</a></td>
+                        <td>《追光者》影视剧原声带</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">9</th>
+                        <td>摩登兄弟刘宇宁</td>
+                        <td><a href="#">幸会的温柔</a></td>
+                        <td>《女士的法则》影视剧原声带</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">10</th>
+                        <td>摩登兄弟刘宇宁</td>
+                        <td><a href="#">凌云寂</a></td>
+                        <td>《说英雄谁是英雄》影视剧原声带</td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!--左侧内容-->
+    <div class="main-r">
+        <div class="mr-top">
+            <p>登录网易云音乐<br></br>享受无限收藏的乐趣</p>
+            <a href="#">请您登录</a>
+        </div>
+        <div class="mr-middle">
+            <h6>
+                <span>热门歌手</span>
+            </h6>
+            <ul>
+                <li>
+                    <img src="../images/liuyuning.jpg" alt="摩登兄弟刘宇宁">
+                    <div class="li-content">
+                        <h4>
+                            <span>摩登兄弟刘宇宁</span>
+                        </h4>
+                        <p>中国华语男歌手</p>
+                    </div>
+                </li>
+                <li>
+                    <img src="../images/chengyi.jpg" alt="成毅">
+                    <div class="li-content">
+                        <h4>
+                            <span>成毅</span>
+                        </h4>
+                        <p>中国著名男演员</p>
+                    </div>
+                </li>
+
+                <li>
+                    <img src="../images/beyond.jpg" alt="beyond">
+                    <div class="li-content">
+                        <h4>
+                            <span>Beyond乐队</span>
+                        </h4>
+                        <p>中国香港摇滚乐队</p>
+                    </div>
+                </li>
+                <li>
+                    <img src="../images/zxy.jpg" alt="张学友">
+                    <div class="li-content">
+                        <h4>
+                            <span>张学友</span>
+                        </h4>
+                        <p>中国香港男歌手</p>
+                    </div>
+                </li>
+                <li>
+                    <img src="../images/zgr.jpg" alt="张国荣">
+                    <div class="li-content">
+                        <h4>
+                            <span>张国荣</span>
+                        </h4>
+                        <p>中国香港男歌手</p>
+                    </div>
+                </li>
+
+            </ul>
+            <div class="ask">
+                <a class="a-content" href="#">
+                    <i>申请成为网易音乐人</i>
+                </a>
+            </div>
+        </div>
+        <div class="mr-bottom">
+            <h6>热门相声专场</h6>
+            <ul>
+                <li>
+                    <img src="../images/guodegang.jpg" alt="郭德纲">
+                    <div class="lc">
+                        <h6>
+                            <span class=".ft-u">过的刚好-郭德纲</span>
+                        </h6>
+                        <p>德云社相声演员</p>
+                    </div>
+                </li>
+                <li>
+                    <img src="../images/yuqian.jpg" alt="于谦">
+                    <div class="lc">
+                        <h6>
+                            <span class=".ft-u">谦道-于谦</span>
+                        </h6>
+                        <p>德云社相声演员</p>
+                    </div>
+                </li>
+                <li>
+                    <img src="../images/zhangyunlei.jpg" alt="张云雷">
+                    <div class="lc">
+                        <h6>
+                            <span class=".ft-u">探清水河-张云雷</span>
+                        </h6>
+                        <p>德云社相声演员</p>
+                    </div>
+                </li>
+                <li>
+                    <img src="../images/qxx.jpg" alt="秦霄贤">
+                    <div class="lc">
+                        <h6>
+                            <span class=".ft-u">碎银几两-秦霄贤</span>
+                        </h6>
+                        <p>德云社相声演员</p>
+                    </div>
+                </li>
+                <li>
+                    <img src="../images/yangjiulang.jpg" alt="杨九郎">
+                    <div class="lc">
+                        <h6>
+                            <span class=".ft-u">单口相声-杨九郎</span>
+                        </h6>
+                        <p>德云社相声演员</p>
+                    </div>
+                </li>
+                <li>
+                    <img src="../images/zhanghelun.jpg" alt="张鹤伦">
+                    <div class="lc">
+                        <h6>
+                            <span class=".ft-u">打扑克-张鹤伦</span>
+                        </h6>
+                        <p>德云社相声演员</p>
+                    </div>
+                </li>
+                <li>
+                    <img src="../images/ZJN.jpg" alt="张九南">
+                    <div class="lc">
+                        <h6>
+                            <span class=".ft-u">我好难-张九南</span>
+                        </h6>
+                        <p>德云社相声演员</p>
+                    </div>
+                </li>
+                <li>
+                    <img src="../images/guoqilin.jpg" alt="郭麒麟">
+                    <div class="lc">
+                        <h6>
+                            <span class=".ft-u">庆余年-郭麒麟</span>
+                        </h6>
+                        <p>德云社相声演员</p>
+                    </div>
+                </li>
+                <li>
+                    <img src="../images/yanhexiang.jpg" alt="闫鹤祥">
+                    <div class="lc">
+                        <h6>
+                            <span class=".ft-u">评书-闫鹤祥</span>
+                        </h6>
+                        <p>德云社相声演员</p>
+                    </div>
+                </li>
+
+                <li>
+                    <img src="../images/xiejin.jpg" alt="谢金">
+                    <div class="lc">
+                        <h6>
+                            <span class=".ft-u">相声新人-谢金</span>
+                        </h6>
+                        <p>德云社相声演员</p>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<div class="shadow_css" id="shadow"></div>
+<!--主体结束-->
+
+<!--页脚-->
+<div class="foot">
+    <div class="m-foot">
+        <div class="foot-wrap">
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
