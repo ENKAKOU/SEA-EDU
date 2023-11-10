@@ -31,7 +31,7 @@ class Bank {
 
 
 class CCBBank extends Bank {
-    @Override
+
     public boolean saveMoney(double money) {
         if (money >= 0 && money <= 50000) {
             this.money += money;
@@ -40,7 +40,6 @@ class CCBBank extends Bank {
         return false;
     }
 
-    @Override
     public boolean getMoney(double money) {
         if (money >= 0 && money <= this.money) {
             this.money -= money;
