@@ -1,3 +1,5 @@
+package Abstract;
+
 class Student {
     int no;
     String name;
@@ -24,7 +26,7 @@ class CreatStudentMessage extends CreatStudent {
 public class StudentTest {
     public static void main(String[] args) {
         CreatStudentMessage creatStudentMessage = new CreatStudentMessage();                     // 创建CreatStudentMessage对象
-        Student student = creatStudentMessage.create(1001, "Alice", 90);        // 调用create方法并接收返回的Student对象
+        Student student = creatStudentMessage.create(1001, "Alice", 90);         // 调用create方法并接收返回的Student对象
 
         System.out.println(student.name + "的学号为" + student.no + "，他的Java成绩为" + student.score);
 

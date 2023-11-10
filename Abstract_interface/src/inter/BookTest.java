@@ -1,3 +1,5 @@
+package inter;
+
 import java.util.Scanner;
 
 class Book {

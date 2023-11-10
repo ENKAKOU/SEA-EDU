@@ -1,3 +1,5 @@
+package Abstract;
+
 abstract class AbstractTest {
     public abstract int f1(int a, int b);
     public abstract String f2(String name, int age);

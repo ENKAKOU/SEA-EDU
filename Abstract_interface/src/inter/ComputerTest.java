@@ -1,3 +1,5 @@
+package inter;
+
 interface Computer {
     double calculate(double a, double b);
 }
@@ -10,7 +12,7 @@ class ComputerImpl implements Computer {
 }
 
 
-class ComputerImpl2 implements Computer {      
+class ComputerImpl2 implements Computer {
     @Override
     public double calculate(double a, double b) {
         return a - b;

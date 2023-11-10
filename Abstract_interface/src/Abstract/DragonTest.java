@@ -1,3 +1,5 @@
+package Abstract;
+
 abstract class Dragon {
     abstract void appearance();
 }

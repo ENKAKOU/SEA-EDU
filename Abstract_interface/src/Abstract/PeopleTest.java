@@ -1,3 +1,6 @@
+package Abstract;
+import java.util.Scanner;
+
 class People {
     private String id;
     private String name;
@@ -47,8 +50,6 @@ class CreatPeopleMessage extends CreatPeople {
     }
 }
 
-
-import java.util.Scanner;
 
 public class PeopleTest {
     public static void main(String[] args) {

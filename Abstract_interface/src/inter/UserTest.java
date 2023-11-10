@@ -1,3 +1,6 @@
+package inter;
+
+import java.util.Scanner;
 class User {
     private int id;
     private int password;
@@ -46,8 +49,6 @@ class UserCheckImpl implements UserCheck {        // 用户操作实现类
     }
 }
 
-
-import java.util.Scanner;
 
 public class UserTest {
     public static void main(String[] args) {

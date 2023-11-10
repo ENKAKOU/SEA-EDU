@@ -1,3 +1,6 @@
+package inter;
+
+import java.util.Scanner;
 interface Circle {
     double PAI = 3.1415926;
     double getArea(double radius);
@@ -22,8 +25,6 @@ class CylinderImpl implements Cylinder {                  // CylinderImpl类实�
 }
 
 
-
-import java.util.Scanner;
 
 public class TestCylinder {
     public static void main(String[] args) {

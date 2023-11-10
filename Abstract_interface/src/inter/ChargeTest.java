@@ -1,3 +1,6 @@
+package inter;
+
+import java.util.Scanner;
 interface Charge {
     public static final double MAX_MONEY = 1000;
     double getMoney(double distance);
@@ -21,8 +24,6 @@ class Truck implements Charge {
     }
 }
 
-
-import java.util.Scanner;
 
 public class ChargeTest {
     public static void main(String[] args) {
